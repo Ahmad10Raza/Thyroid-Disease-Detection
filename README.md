@@ -18,8 +18,8 @@ Thyroid diseases are common and can have a significant impact on a person's heal
 
 The repository contains the code necessary to train the model, as well as a pre-trained model for immediate use. Additionally, a Jupyter Notebook is provided to demonstrate the step-by-step process of training the model.
 
-**Demo Video:** [Link to the demo video](https://github.com/Ahmad10Raza/Thyroid-Disease-Detection/blob/master/Documentation/Ouput.mp4) 
-
+**Demo Video:** 
+[![Watch the video](https://github.com/Ahmad10Raza/Thyroid-Disease-Detection/blob/master/Output.png)](https://github.com/Ahmad10Raza/Thyroid-Disease-Detection/blob/master/Documentation/Ouput.mp4)
 ## Installation
 
 To use the code in this repository, please follow these steps:
