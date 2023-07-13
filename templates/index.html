@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thyroid Disease Detection</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    }
+
+    .welcome-message {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 24px;
+      color: white;
+      background-image: linear-gradient(to right, #0099f7, #f11712);
+    }
+
+    .form {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .form:hover {
+      transform: scale(1.02);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .text {
+      color: white;
+    }
+    .sub {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .sub:hover {
+      background-color: #45a049;
+    }
+
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-message">
+    <h1>Welcome To Thyroid Disease Detection</h1>
+  </div>
+
+  <form class="form" action="/predict" method="POST">
+
+    <label for="age"  class="text" >Age</label><br>
+    <input type="number" class="form-control" name="age" id="age" min="1" max="100" placeholder="(1, 100)" step="any" required><br>
+
+    <label for="sex"  class="text">Sex</label><br>
+    <input type="number" class="form-control" name="sex" id="sex" min="0" max="1" placeholder="Male - 1, Female - 0" required><br>
+
+    <label for="tsh"  class="text" >Thyroid Stimulating Hormone Level</label><br>
+    <input type="number" class="form-control" name="TSH" id="tsh" min="0.005" max="478.0" placeholder="(0.005, 478.0)" step="any" required ><br>
+
+    <label for="t3"  class="text">T3 Level</label><br>
+    <input type="number" class="form-control" name="T3" id="t3" min="0.05" max="10.6" placeholder="(0.05, 10.6)" step="any" required><br>
+
+    <label for="t4u"  class="text">T4U Level</label><br>
+    <input type="number" class="form-control" name="T4U" id="t4u" min="0.31" max="2.12" placeholder="(0.31, 2.12)" step="any" required><br>
+
+    <label for="fti"  class="text">Free Thyroxine Index (FTI)</label><br>
+    <input type="number" class="form-control" name="FTI" id="fti" min="2.0" max="395.0" placeholder="(2.0, 395.0)" step="any" required><br>
+
+    <label for="on_thyroxine"  class="text">On Thyroxine</label><br>
+    <input type="number" class="form-control" name="onthyroxine" id="on_thyroxine" min="0" max="1" placeholder="(0, 1)" required><br>
+
+    <label for="query_on_thyroxine"  class="text">Query On Thyroxine</label><br>
+    <input type="number" class="form-control" name="queryonthyroxine" id="query_on_thyroxine" min="0" max="1" placeholder="(0, 1)" required><br>
+
+    <label for="on_anti_thyroid_medication"  class="text">On Antithyroid Medication</label><br>
+    <input type="number" class="form-control" name="onantithyroidmedication" id="on_anti_thyroid_medication" min="0" max="1" placeholder="(0, 1)" required><br>
+
+    <label for="sick"  class="text">Sick</label><br>
+    <input type="number" class="form-control" name="sick" id="sick" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="pregnant"  class="text">Pregnant</label><br>
+    <input type="number" class="form-control" name="pregnant" id="pregnant" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="thyroid_surgery"  class="text">Thyroid Surgery</label><br>
+    <input type="number" class="form-control" name="thyroidsurgery" id="thyroid_surgery" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="I131_treatment"  class="text">I131 Treatment</label><br>
+    <input type="number" class="form-control" name="I131treatment" id="I131_treatment" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="query_hypothyroid"  class="text">Query Hypothyroid</label><br>
+    <input type="number" class="form-control" name="queryhypothyroid" id="query_hypothyroid" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="query_hyperthyroid"  class="text">Query Hyperthyroid</label><br>
+    <input type="number" class="form-control" name="queryhyperthyroid" id="query_hyperthyroid" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="lithium"  class="text">Lithium</label><br>
+    <input type="number" class="form-control" name="lithium" id="lithium" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="goitre"  class="text">Goitre</label><br>
+    <input type="number" class="form-control" name="goitre" id="goitre" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="tumor"  class="text">Tumor</label><br>
+    <input type="number" class="form-control" name="tumor" id="tumor" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="hypopituitary"  class="text">Hypopituitary</label><br>
+    <input type="number" class="form-control" name="hypopituitary" id="hypopituitary" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+    <label for="psych"  class="text">Psychological Symptoms</label><br>
+    <input type="number" class="form-control" name="psych" id="psych" min="0" max="1" placeholder="Yes - 1, No - 0" required><br>
+
+<!--            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Predict"><br>-->
+    <center><b><input type="submit" name="sb" value="Predict" class="sub btn btn-primary"></p> <br></b></center>
+
+  </form>
+
+    
+  </form>
+</body>
+</html>

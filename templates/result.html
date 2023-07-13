@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      margin-left: 20px;
+    }
+
+    .bg-result {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .card-body {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+      color: #007bff;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-result">
+  <nav class="navbar">
+    <a href="" class="navbar-brand text-light">Thyroid Disease: Result</a>
+  </nav>
+  <div class="container">
+    <div class="col-md-12">
+      <div class="card-body">
+        <br>
+        <center><h4 style="color: blue;">{{prediction_text}}</h4></center>
+        <br>
+        <center><h4><a href="http://127.0.0.1:5000">Check another Patient's health</a></h4></center>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
