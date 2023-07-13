@@ -21,7 +21,7 @@ The repository contains the code necessary to train the model, as well as a pre-
 **Demo Video: https://www.youtube.com/watch?v=6SfltqaGNJI** 
 
 
-## Installation
+## Installation & Usage
 
 To use the code in this repository, please follow these steps:
 
@@ -41,27 +41,15 @@ To use the code in this repository, please follow these steps:
     ```bash
     http://127.0.0.1:5000/
     ```
+![Output](https://github.com/Ahmad10Raza/Thyroid-Disease-Detection/blob/master/Output.png)
+
 4. Fill Required Information then click `Predict`
    
-## Usage
 
-To use the pre-trained model and make predictions, follow these steps:
-
-1. Make sure you have the required dependencies installed (see [Installation](#installation)).
-
-2. Run the `predict.py` script:
-
-   ```bash
-   python predict.py
-   ```
-
-   This will prompt you to enter the values for the medical features (T3, T4, and TSH levels) and display the predicted outcome.
-
-For a detailed overview of the training process and how to use the code, refer to the `Thyroid_Disease_Detection.ipynb` Jupyter Notebook.
 
 ## Data
 
-The dataset used for training the model is not included in this repository due to its large size. However, you can find the dataset used in the project at [link-to-dataset](https://example.com).
+The dataset used for training the model is not included in this repository due to its large size. However, you can find the dataset used in the project at [link-to-dataset](https://archive.ics.uci.edu/dataset/102/thyroid+disease).
 
 ## Model
 
